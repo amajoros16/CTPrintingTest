@@ -13,36 +13,11 @@ namespace CTPrintingTest
     /// </summary>
     public partial class PrintIt : Page
     {
+        private bool RegisteredGDPicture_14_1_24_ = false;
+
         public PrintIt()
         {
             InitializeComponent();
-
-            try
-            {
-                //RegisterGdPictureKeys
-                LicenseManager licenseManager = new LicenseManager();
-                //old set hardcoded into the services
-                String gdPictureDocumentImaging = "13294798890617477172411429960842027316";
-                String gdPicturePDFPluginLicense = "72637474592727873112111497126291724196";
-                String gdPictureXMPAnnotationsPlugin = "73476099571711969151913499944328750100";
-                String gdPictureBarcodeRecognition = "72847377395707978112112498646373012148";
-
-                licenseManager.RegisterKEY(gdPictureDocumentImaging);
-                licenseManager.RegisterKEY(gdPicturePDFPluginLicense);
-                licenseManager.RegisterKEY(gdPictureXMPAnnotationsPlugin);
-                licenseManager.RegisterKEY(gdPictureBarcodeRecognition);
-
-                txtOutput.Text = "GD Picture registered successfully." + System.Environment.NewLine;
-            }
-            catch (Exception ex)
-            {
-                txtOutput.Text = "GD Picture failed to register." + System.Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + ex.Message + System.Environment.NewLine;
-                txtOutput.Text = txtOutput.Text + ex.StackTrace + System.Environment.NewLine;
-
-            }
-
-
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)
@@ -108,6 +83,33 @@ namespace CTPrintingTest
 
         private void PrintGDPictureOfficial(string fileSelected)
         {
+            if (!RegisteredGDPicture_14_1_24_)
+            {
+                try
+                {
+                    //RegisterGdPictureKeys
+                    LicenseManager licenseManager = new LicenseManager();
+                    //old set hardcoded into the services
+                    String gdPictureDocumentImaging = "13294798890617477172411429960842027316";
+                    String gdPicturePDFPluginLicense = "72637474592727873112111497126291724196";
+                    String gdPictureXMPAnnotationsPlugin = "73476099571711969151913499944328750100";
+                    String gdPictureBarcodeRecognition = "72847377395707978112112498646373012148";
+
+                    licenseManager.RegisterKEY(gdPictureDocumentImaging);
+                    licenseManager.RegisterKEY(gdPicturePDFPluginLicense);
+                    licenseManager.RegisterKEY(gdPictureXMPAnnotationsPlugin);
+                    licenseManager.RegisterKEY(gdPictureBarcodeRecognition);
+
+                    txtOutput.Text = "GD Picture 14.1.24 registered successfully." + System.Environment.NewLine;
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "GD Picture 14.1.24 failed to register." + System.Environment.NewLine;
+                    txtOutput.Text = txtOutput.Text + ex.Message + System.Environment.NewLine;
+                    txtOutput.Text = txtOutput.Text + ex.StackTrace + System.Environment.NewLine;
+                    return;
+                }
+            }
 
             //We assume that GdPicture has been correctly installed and unlocked.
             //Initializing the GdPicturePDF object.
