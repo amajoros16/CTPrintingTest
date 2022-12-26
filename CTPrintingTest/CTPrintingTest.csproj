@@ -41,6 +41,7 @@
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GDPictureViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +72,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GDPictureOfficial.cs" />
+    <Compile Include="GDPictureViewPage.xaml.cs">
+      <DependentUpon>GDPictureViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -109,6 +118,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(SolutionDir)packages\GdPicture.NET.14.1.0.24\lib\*.*" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(SolutionDir)packages\GdPicture.NET.14.1.0.24\lib\*.*" "$(TargetDir)\gdpicture"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(TargetDir)\gdpicture" md  "$(TargetDir)\gdpicture"</PreBuildEvent>
   </PropertyGroup>
 </Project>

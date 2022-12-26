@@ -17,9 +17,9 @@
         <Button x:Name="Ok" Content="OK" Height="32" Canvas.Left="601" Canvas.Top="396" Width="171" Click="Ok_Click"/>
         <TextBox x:Name="txtFile" Height="23" Canvas.Left="37" TextWrapping="Wrap" Canvas.Top="64" Width="544"/>
         <Button x:Name="SelectFile" Content="Select File" Height="23" Canvas.Left="627" Canvas.Top="70" Width="138" Click="SelectFile_Click"/>
-        <TextBox x:Name="txtOutput" Canvas.Left="56" TextWrapping="Wrap" Text="" Canvas.Top="152" Width="698" Height="224"
+        <TextBox x:Name="txtOutput" x:FieldModifier="public" Canvas.Left="56" TextWrapping="Wrap" Text="" Canvas.Top="152" Width="698" Height="224"
                  VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
-        <ComboBox x:Name="cmbDPI" Canvas.Left="628" Canvas.Top="23" Width="137" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <ComboBox x:Name="cmbDPI" x:FieldModifier="public" Canvas.Left="628" Canvas.Top="23" Width="137" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center">
             <ComboBoxItem>100 dpi</ComboBoxItem>
             <ComboBoxItem IsSelected="True">200 dpi</ComboBoxItem>
             <ComboBoxItem>300 dpi</ComboBoxItem>
