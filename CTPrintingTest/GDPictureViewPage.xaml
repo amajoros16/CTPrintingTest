@@ -44,6 +44,7 @@
         <Button Content="Print CT (no dpi)" HorizontalAlignment="Left" Margin="375,14,0,0" Grid.Row="1" VerticalAlignment="Top" Width="115" Click="PrintLikeCareTend_Click"/>
         <Button Content="Print Experimental" HorizontalAlignment="Left" Margin="518,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="119" Click="PrintExperimental_Click"/>
         <Button Content="Ok" HorizontalAlignment="Left" Margin="677,14,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="1.138,0.345" Width="87" Click="Ok_Click"/>
+        <Button Content="Print O2S" HorizontalAlignment="Left" Margin="199,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="147" Click="PrintO2S_Click"/>
 
 
     </Grid>

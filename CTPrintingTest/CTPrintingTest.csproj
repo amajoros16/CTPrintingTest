@@ -38,10 +38,20 @@
     <Reference Include="GdPicture.NET.14, Version=14.1.0.121, Culture=neutral, PublicKeyToken=f52a2e60ad468dbb, processorArchitecture=MSIL">
       <HintPath>..\packages\GdPicture.NET.14.1.0.24\lib\GdPicture.NET.14.dll</HintPath>
     </Reference>
+    <Reference Include="NewRelic.Api.Agent, Version=10.0.0.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewRelic.Agent.Api.10.4.0\lib\net462\NewRelic.Api.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDFRender4NET.WPF, Version=5.0.1.0, Culture=neutral, PublicKeyToken=409cca6fd4e6c30b, processorArchitecture=MSIL">
+      <HintPath>..\packages\O2S.Components.PDFRender4NET.WPF.5.0.1\lib\O2S.Components.PDFRender4NET.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDFView4NET.WPF, Version=5.0.1.0, Culture=neutral, PublicKeyToken=2f824cb48af66728, processorArchitecture=MSIL">
+      <HintPath>..\packages\O2S.Components.PDFView4NET.WPF.5.0.1\lib\O2S.Components.PDFView4NET.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,11 +126,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="newrelic.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(SolutionDir)packages\GdPicture.NET.14.1.0.24\lib\*.*" "$(TargetDir)\gdpicture"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(SolutionDir)packages\GdPicture.NET.14.1.0.24\lib\*.*" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>if not exist "$(TargetDir)\gdpicture" md  "$(TargetDir)\gdpicture"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

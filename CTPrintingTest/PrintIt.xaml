@@ -12,7 +12,6 @@
                   SelectedValuePath="Content">
             <ComboBoxItem IsSelected="True">GD Picture Official</ComboBoxItem>
             <ComboBoxItem>GD Picture CareTend</ComboBoxItem>
-            <ComboBoxItem>O2 Solutions Official</ComboBoxItem>
         </ComboBox>
         <Button x:Name="Ok" Content="OK" Height="32" Canvas.Left="601" Canvas.Top="396" Width="171" Click="Ok_Click"/>
         <TextBox x:Name="txtFile" Height="23" Canvas.Left="37" TextWrapping="Wrap" Canvas.Top="64" Width="544"/>
